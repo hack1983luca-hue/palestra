@@ -50,7 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         plugins: [
             'gjs-preset-webpage',
             'grapesjs-plugin-export',
-            'gjs-blocks-basic'
+            'gjs-blocks-basic',
+            'gjs-blocks-flexbox',
+            'grapesjs-plugin-forms',
+            'gjs-navbar',
+            'gjs-component-countdown',
+            'grapesjs-tabs'
         ],
         pluginsOpts: {
             'gjs-preset-webpage': {
@@ -174,6 +179,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // If Templates are loaded, add Global Blocks
         if (window.Templates && window.Templates.setupGlobalBlocks) {
             window.Templates.setupGlobalBlocks(editor);
+        }
+    });
+
+    // Header/Footer Settings Toggle Logic
+    const btnEditGlobal = document.getElementById('btn-edit-global');
+    btnEditGlobal.classList.remove('hidden'); // Show the button
+
+    btnEditGlobal.addEventListener('click', () => {
+        // Find header in canvas
+        const headerComponent = editor.getWrapper().findType('header')[0];
+        if (headerComponent) {
+            editor.select(headerComponent);
+            // Open Settings/Traits Panel
+            editor.Panels.getButton('views', 'open-tm').set('active', true);
+
+            // Scroll to it
+            const el = headerComponent.getEl();
+            if(el) { el.scrollIntoView({behavior: 'smooth'}); }
+        } else {
+            alert('Nessun Header Globale trovato in questo template.');
         }
     });
 

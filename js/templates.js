@@ -140,16 +140,148 @@ window.Templates = {
             </footer>`,
         });
 
+        // Add more Rich Sections
+        bm.add('hero-section', {
+            label: '<i class="fas fa-image mb-1 text-2xl block"></i> Hero Section',
+            category: 'Rich Sections',
+            content: `
+            <section class="bg-indigo-700 text-white py-20 px-4">
+                <div class="container mx-auto text-center">
+                    <h1 class="text-5xl font-extrabold mb-6">Build Your Dream Website</h1>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">No coding required. Drag, drop, and launch your ideas in minutes with our intuitive builder.</p>
+                    <a href="#" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition">Get Started Now</a>
+                </div>
+            </section>
+            `
+        });
+
+        bm.add('features-section', {
+            label: '<i class="fas fa-list mb-1 text-2xl block"></i> Features',
+            category: 'Rich Sections',
+            content: `
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow text-center">
+                            <i class="fas fa-bolt text-4xl text-yellow-500 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Lightning Fast</h3>
+                            <p class="text-gray-600">Our platform ensures your website loads incredibly fast for the best user experience.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow text-center">
+                            <i class="fas fa-lock text-4xl text-green-500 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Secure</h3>
+                            <p class="text-gray-600">Top-notch security features built-in to keep your data and your users safe.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow text-center">
+                            <i class="fas fa-mobile-alt text-4xl text-blue-500 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Responsive</h3>
+                            <p class="text-gray-600">Your site will look perfect on desktops, tablets, and smartphones automatically.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            `
+        });
+
+        bm.add('pricing-section', {
+            label: '<i class="fas fa-dollar-sign mb-1 text-2xl block"></i> Pricing Table',
+            category: 'Rich Sections',
+            content: `
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Simple Pricing</h2>
+                    <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
+                        <div class="bg-gray-50 border border-gray-200 p-8 rounded-xl text-center w-full md:w-1/3">
+                            <h3 class="text-2xl font-bold mb-4">Basic</h3>
+                            <div class="text-4xl font-extrabold mb-6">$9<span class="text-lg text-gray-500 font-normal">/mo</span></div>
+                            <ul class="text-gray-600 mb-8 space-y-2">
+                                <li>1 Website</li>
+                                <li>5GB Storage</li>
+                                <li>Basic Support</li>
+                            </ul>
+                            <a href="#" class="block w-full bg-indigo-600 text-white font-bold py-2 rounded hover:bg-indigo-700">Choose Basic</a>
+                        </div>
+                        <div class="bg-indigo-600 text-white p-8 rounded-xl text-center shadow-xl w-full md:w-1/3 transform scale-105">
+                            <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                            <div class="text-4xl font-extrabold mb-6">$29<span class="text-lg text-indigo-200 font-normal">/mo</span></div>
+                            <ul class="mb-8 space-y-2 text-indigo-100">
+                                <li>10 Websites</li>
+                                <li>50GB Storage</li>
+                                <li>Priority Support</li>
+                                <li>Custom Domain</li>
+                            </ul>
+                            <a href="#" class="block w-full bg-white text-indigo-600 font-bold py-2 rounded hover:bg-gray-100">Choose Pro</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            `
+        });
+
+        bm.add('testimonials-section', {
+            label: '<i class="fas fa-quote-left mb-1 text-2xl block"></i> Testimonials',
+            category: 'Rich Sections',
+            content: `
+            <section class="py-16 bg-gray-100">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-bold mb-10 text-gray-800">What Our Clients Say</h2>
+                    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                        <div class="text-yellow-400 text-2xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xl italic text-gray-700 mb-6">"This platform revolutionized how we build landing pages. It's incredibly fast, intuitive, and the results are professional."</p>
+                        <div class="font-bold text-gray-900">- Jane Doe, CEO of TechStart</div>
+                    </div>
+                </div>
+            </section>
+            `
+        });
+
+        bm.add('cta-section', {
+            label: '<i class="fas fa-bullhorn mb-1 text-2xl block"></i> Call To Action',
+            category: 'Rich Sections',
+            content: `
+            <section class="py-20 bg-blue-600 text-white text-center">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold mb-4">Ready to boost your productivity?</h2>
+                    <p class="text-xl mb-8 text-blue-100">Join thousands of satisfied users today.</p>
+                    <a href="#" class="bg-white text-blue-600 font-bold py-3 px-10 rounded-full shadow-lg hover:bg-gray-100 transition text-lg">Sign Up Now</a>
+                </div>
+            </section>
+            `
+        });
+
         // Ensure these components are marked as specific types so they can be isolated if needed
         editor.DomComponents.addType('header', {
             isComponent: el => el.tagName === 'HEADER',
             model: {
                 defaults: {
-                    name: 'Header',
+                    name: 'Header Settings',
                     traits: [
-                        { type: 'text', name: 'id' },
-                        { type: 'text', name: 'title' }
-                    ]
+                        {
+                            type: 'color',
+                            name: 'background-color',
+                            label: 'Sfondo Header',
+                            changeProp: 1
+                        },
+                        {
+                            type: 'color',
+                            name: 'color',
+                            label: 'Colore Testo',
+                            changeProp: 1
+                        }
+                    ],
+                },
+                init() {
+                    this.on('change:background-color', this.handleStyleChange);
+                    this.on('change:color', this.handleStyleChange);
+                },
+                handleStyleChange() {
+                    const bg = this.get('background-color');
+                    const color = this.get('color');
+                    if (bg) this.addStyle({ 'background-color': bg });
+                    if (color) this.addStyle({ 'color': color });
                 }
             }
         });
@@ -158,11 +290,31 @@ window.Templates = {
             isComponent: el => el.tagName === 'FOOTER',
             model: {
                 defaults: {
-                    name: 'Footer',
+                    name: 'Footer Settings',
                     traits: [
-                        { type: 'text', name: 'id' },
-                        { type: 'text', name: 'title' }
+                        {
+                            type: 'color',
+                            name: 'background-color',
+                            label: 'Sfondo Footer',
+                            changeProp: 1
+                        },
+                        {
+                            type: 'color',
+                            name: 'color',
+                            label: 'Colore Testo',
+                            changeProp: 1
+                        }
                     ]
+                },
+                init() {
+                    this.on('change:background-color', this.handleStyleChange);
+                    this.on('change:color', this.handleStyleChange);
+                },
+                handleStyleChange() {
+                    const bg = this.get('background-color');
+                    const color = this.get('color');
+                    if (bg) this.addStyle({ 'background-color': bg });
+                    if (color) this.addStyle({ 'color': color });
                 }
             }
         });
