@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Builder - Editor</title>
+
+    <!-- Tailwind CSS for Editor UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- GrapesJS -->
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+    <script src="https://unpkg.com/grapesjs"></script>
+
+    <!-- GrapesJS Plugins -->
+    <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
+    <script src="https://unpkg.com/grapesjs-plugin-export"></script>
+    <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+
+    <style>
+        /* Custom UI Styles for the Topbar */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #editor-topbar {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background-color: #2d3748;
+            color: white;
+            z-index: 1000;
+            position: relative;
+        }
+
+        #gjs {
+            height: calc(100vh - 60px) !important;
+            border: none;
+        }
+
+        /* GrapesJS Custom Overrides to make it look a bit more modern */
+        .gjs-one-bg { background-color: #1a202c; }
+        .gjs-two-color { color: #e2e8f0; }
+        .gjs-three-bg { background-color: #2d3748; color: white; }
+        .gjs-four-color, .gjs-four-color-h:hover { color: #63b3ed; }
+
+        /* Highlight Global Header/Footer Blocks */
+        .gjs-block[title="Global Header"], .gjs-block[title="Global Footer"] {
+            border: 2px solid #63b3ed;
+            background-color: rgba(99, 179, 237, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Editor Topbar -->
+    <div id="editor-topbar">
+        <div class="flex items-center space-x-4">
+            <button onclick="window.location.href='index.html'" class="text-gray-300 hover:text-white transition" title="Torna alla Dashboard">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+            <div class="h-6 w-px bg-gray-600"></div>
+            <input type="text" id="project-name-input" class="bg-transparent border-b border-transparent hover:border-gray-500 focus:border-blue-400 focus:outline-none text-white font-semibold text-lg px-1 py-1 transition" value="Mio Nuovo Sito" placeholder="Nome Progetto">
+        </div>
+
+        <div class="flex items-center space-x-3">
+            <div class="text-sm text-gray-400 mr-4" id="save-status">Salvato</div>
+
+            <button id="btn-edit-global" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded text-sm transition font-medium flex items-center hidden">
+                <i class="fas fa-globe mr-2"></i> Modifica Header/Footer Globali
+            </button>
+
+            <button id="btn-save" class="bg-green-600 hover:bg-green-700 text-white px-4 py-1.5 rounded text-sm transition font-medium shadow-sm flex items-center">
+                <i class="fas fa-save mr-2"></i> Salva
+            </button>
+
+            <button id="btn-export" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1.5 rounded text-sm transition font-medium shadow-sm flex items-center">
+                <i class="fas fa-download mr-2"></i> Esporta .ZIP
+            </button>
+        </div>
+    </div>
+
+    <!-- GrapesJS Container -->
+    <div id="gjs"></div>
+
+    <!-- External Logic Scripts -->
+    <script src="js/templates.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>
