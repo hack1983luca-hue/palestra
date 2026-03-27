@@ -71,17 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     css: {
                         'style.css': ed => ed.getCss(),
                     },
-                    'index.html': ed => `<!doctype html>
-<html lang="it">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- Include Tailwind if needed, assuming the templates might use it -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  </head>
-  <body>${ed.getHtml()}</body>
-</html>`
+                    'index.html': ed => `<!doctype html>\n<html lang="it">\n  <head>\n    <meta charset="utf-8">\n    <link rel="stylesheet" href="./css/style.css">\n    <script src="https://cdn.tailwindcss.com"></script>\n    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">\n  </head>\n  <body>${ed.getHtml()}</body>\n</html>`
                 }
             }
         },
@@ -90,14 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
             handleAdd: (textFromInput) => {
                 editor.AssetManager.add(textFromInput);
             },
-            // Handle local file uploads by reading as Base64 to avoid backend dependency
             uploadFile: function(e) {
                 var files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
                 var formData = new FormData();
-
                 for (var i = 0, len = files.length; i < len; i++) {
                     var file = files[i];
-
                     var reader = new FileReader();
                     reader.onload = (function(theFile) {
                         return function(e) {
@@ -108,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             });
                         };
                     })(file);
-
                     reader.readAsDataURL(file);
                 }
             }
@@ -196,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Scroll to it
             const el = headerComponent.getEl();
-            if(el) { el.scrollIntoView({behavior: 'smooth'}); }
+            if(el) { el.scrollIntoView({behavior: 'smooth'}) }
         } else {
             alert('Nessun Header Globale trovato in questo template.');
         }
@@ -207,4 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
     editor.on('storage:end', () => { saveStatus.textContent = 'Salvato'; });
     editor.on('storage:error', () => { saveStatus.textContent = 'Errore di salvataggio'; });
 
+    // Automatically open Style Manager when an element is selected to emphasize customizability
+    editor.on("component:selected", (component) => {
+        const openSmBtn = editor.Panels.getButton("views", "open-sm");
+        if (openSmBtn) {
+            openSmBtn.set("active", true);
+        }
+    });
 });

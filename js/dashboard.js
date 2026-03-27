@@ -1,17 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Data Initialization ---
     // Mocking 30 templates: 10 Wow Effect, 10 Professional, 10 Generalist
-    const templates = [];
-
-    for (let i = 1; i <= 10; i++) {
-        templates.push({ id: `wow-${i}`, category: 'wow', name: `Wow Effect Template ${i}`, image: `https://via.placeholder.com/300x200?text=Wow+Effect+${i}` });
-    }
-    for (let i = 1; i <= 10; i++) {
-        templates.push({ id: `prof-${i}`, category: 'professional', name: `Professional Template ${i}`, image: `https://via.placeholder.com/300x200?text=Professional+${i}` });
-    }
-    for (let i = 1; i <= 10; i++) {
-        templates.push({ id: `gen-${i}`, category: 'generalist', name: `Generalist Template ${i}`, image: `https://via.placeholder.com/300x200?text=Generalist+${i}` });
-    }
+            const templates = [
+        { id: 'wow-1', category: 'wow', name: 'Wow Effect Template 1', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-2', category: 'wow', name: 'Wow Effect Template 2', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-3', category: 'wow', name: 'Wow Effect Template 3', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-4', category: 'wow', name: 'Wow Effect Template 4', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-5', category: 'wow', name: 'Wow Effect Template 5', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-6', category: 'wow', name: 'Wow Effect Template 6', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-7', category: 'wow', name: 'Wow Effect Template 7', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-8', category: 'wow', name: 'Wow Effect Template 8', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-9', category: 'wow', name: 'Wow Effect Template 9', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'wow-10', category: 'wow', name: 'Wow Effect Template 10', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-1', category: 'professional', name: 'Professional Template 1', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-2', category: 'professional', name: 'Professional Template 2', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-3', category: 'professional', name: 'Professional Template 3', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-4', category: 'professional', name: 'Professional Template 4', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-5', category: 'professional', name: 'Professional Template 5', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-6', category: 'professional', name: 'Professional Template 6', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-7', category: 'professional', name: 'Professional Template 7', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-8', category: 'professional', name: 'Professional Template 8', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-9', category: 'professional', name: 'Professional Template 9', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'prof-10', category: 'professional', name: 'Professional Template 10', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-1', category: 'generalist', name: 'Generalist Template 1', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-2', category: 'generalist', name: 'Generalist Template 2', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-3', category: 'generalist', name: 'Generalist Template 3', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-4', category: 'generalist', name: 'Generalist Template 4', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-5', category: 'generalist', name: 'Generalist Template 5', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-6', category: 'generalist', name: 'Generalist Template 6', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-7', category: 'generalist', name: 'Generalist Template 7', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-8', category: 'generalist', name: 'Generalist Template 8', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-9', category: 'generalist', name: 'Generalist Template 9', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+        { id: 'gen-10', category: 'generalist', name: 'Generalist Template 10', image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80' },
+    ];
 
     const projectsContainer = document.getElementById('projects-container');
     const templatesContainer = document.getElementById('templates-container');
